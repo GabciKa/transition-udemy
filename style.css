@@ -1,8 +1,9 @@
 body {
-    height: 100vh;
     display: grid;
     justify-content: center;
     align-items: center;
+    font-family: sans-serif;
+    text-align: center;
 }
 
 .one {
@@ -14,6 +15,7 @@ body {
     padding: 20px 40px;
     position: relative;
     overflow: hidden;
+    margin-bottom: 20px;
 }
 
 .one:before {
@@ -46,6 +48,7 @@ body {
     position: relative;
     transition: all 1s;
     overflow: hidden;
+    margin-bottom: 20px;
 }
 
 .two:before {
@@ -57,8 +60,7 @@ body {
     width:100%;
     background-color: blue;
     z-index: -1;
-    transform: translateX(100%); /* translateX(-100%) => hover bude najíždět zleva doprava. translateY(100%) => zvrchu dolu, translateY(-100%) => zespodu nahoru */
-    transition: all 1s;
+    transform: translateX(100%); /* translateX(-100%) => hover bude najíždět zleva doprava. translateY(100%) => zvrchu dolu, translateY(-100%) => zespodu nahoru */    transition: all 1s;
 }
 
 .two:hover::before {
@@ -68,3 +70,494 @@ body {
 .two:hover {
     color:white;
 }
+
+.three {
+    padding: 20px 40px;
+    font-family: sans-serif;
+    font-size: 45px;
+    color:#262626;
+    border: 5px solid #262626;
+    text-decoration: none;
+    letter-spacing: 2px;
+    position: relative;
+    transition: 1s;
+    margin-bottom: 20px;
+}
+
+.three:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-color: #262626;
+    transition: 1s;
+    transform: rotateX(90deg);
+    z-index: -1;
+}
+
+.threehover::before {
+    transform: rotateX(0deg);
+} /* když nechám jen tuhle before část, bude hover efekt vodorovný, část s after přidá svislou část. dohromady dělají ten kříž */
+
+.three:hover {
+    color:white;
+}
+
+.three:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-color: #262626;
+    transition: 1s;
+    transform: rotateY(90deg);
+    z-index: -1;
+}
+
+.three:hover::after {
+    transform: rotateX(0deg);
+}
+
+/* ================== */
+
+.four {
+    text-decoration: none;
+    padding: 20px 40px;
+    color: #e1332d;
+    border: 3px solid currentColor;
+    text-transform: uppercase;
+    font-size: 40px;
+    font-family: sans-serif;
+    font-weight: 300;
+    letter-spacing: -2px;
+    transition: all 0.5s;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.four:hover {
+    font-weight: bold;
+    letter-spacing: 8px;
+    border: 7px solid #e1332d;
+    color: #e1332d;
+}
+
+/* ================== */
+
+.five {
+    text-decoration: none;
+    color: black;
+    font-family: sans-serif;
+    font-size: 40px;
+    border: 3px solid black;
+    padding: 20px 40px;
+    position: relative;
+    transition: all 1s;
+    overflow: hidden;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.five::before {
+    content: "YEAH!";
+    color:black;
+    background-color: red;
+    position: absolute;
+    top:0;
+    left:0;
+    height: 100%;
+    width:100%;
+    background-color: blue;
+   
+    transform: translateY(-100%);
+    transition: all 1s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    
+}
+
+.five:hover::before {
+    transform: translateY(0);
+}
+
+/* ================== */
+
+.six {
+    text-decoration: none;
+    background-color: darkred;
+    color: white;
+    font-family: sans-serif;
+    font-size: 40px;
+    border: 3px solid darkred;
+    padding: 20px 40px;
+    transition: all 0.3s;
+    position: relative;
+    text-align: center;
+    overflow:hidden;
+    margin-bottom: 20px;
+}
+
+.six:hover {
+    background-color: red;
+}
+
+.six::before {
+    content:"";
+    background-color: white;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    position: absolute;
+    transform: translateX(-100%) rotate(45deg);
+    transition: all 0.3s;
+}
+
+.six:hover:before {
+    transform: translateX(100%) rotate(45deg);
+}
+
+/* ================== */
+
+.seven {
+    text-decoration: none;
+    background-color: darkred;
+    font-family: sans-serif;
+    font-size: 40px;
+    border: 3px solid darkred;
+    padding: 20px 40px;
+    position: relative;
+    margin-bottom: 20px;
+    text-align: center;
+    color: transparent;
+    overflow: hidden;
+}
+
+
+.seven::before {
+    content:"Hover me";
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: yellow;
+    color: #262626;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s;
+}
+
+.seven::after {
+    content:"Hover me";
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: yellow;
+    color: #262626;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s;
+    transform: translate(-100%, 100%);
+}
+
+.seven:hover:before {
+    transform: translate(100%, -100%);
+}
+
+.seven:hover:after {
+    transform: translate(0, 0);
+}
+
+/* ================== */
+
+.eight {
+    text-decoration: none;
+    color: #262626;
+    font-family: sans-serif;
+    font-size: 40px;
+    border: 3px solid #262626;
+    padding: 20px 40px;
+    transition: all 0.5s;
+    position: relative;
+
+    margin-bottom: 20px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.eight:before {
+    content:"Hover me";
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #262626;
+    color:white;
+    transform: scale(5);
+    opacity: 0;
+    transition: all 0.5s;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.eight:hover::before {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* ================== */
+
+.nine {
+    border: 2px solid tomato;
+    background: none;
+    color: tomato;
+    padding: 20px 40px;
+    font-size: 25px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.5s;
+    position: relative;
+    margin-bottom: 20px;
+    color: tomato;
+    overflow: hidden;
+}
+
+.nine:hover {
+    color: white;
+}
+
+.nine:before {
+    content: "";
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: tomato;
+    z-index:-1;
+    border-radius:0 0 50% 50%; /* když bych chtěla, aby se barva vylévala ne shora dolu, ale třeba zdola nahoru, tak změním výše top:0 na bottom:0 a ještě změním border radius na 50% 50% 0 0 */
+    height: 0%;
+    transition: all 0.5s;
+}
+
+.nine:hover:before {
+    height:190%;
+}
+
+/* ================== */
+
+.ten {
+    padding: 20px 40px;
+    text-transform: uppercase;
+    text-decoration: none;
+    background-color: #f1c40f;
+    color: white;
+    font-size: 20px;
+    font-family: sans-serif;
+    letter-spacing: 2px;
+    position: relative;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.ten::before {
+    content: "button";
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #2ce771;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transform: rotateX(270deg);
+    transform-origin: top;
+    transition: all 0.5s;
+}
+
+.ten:hover::before, .ten:hover::after {
+    transform: rotateX(0deg);
+}
+
+.ten::after {
+    content: "button";
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: red;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transform: rotateX(270deg);
+    transform-origin: bottom;
+    transition: all 0.5s;
+    transition-delay: 0.25s;
+}
+
+/* ================== */
+
+.eleven {
+    padding: 20px 40px;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 4px;
+    color: transparent;
+    border: 3px solid #ff0;
+    background-color: grey;
+    font-size: 20px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.eleven:before {
+    content: "button";
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #363636;
+    color:#ff0; 
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: all 0.5s;
+}
+
+.eleven:hover:before {
+    left: 100%;
+    transform: scale(0) rotateY(360deg);
+    opacity: 0;
+}
+
+.eleven:after {
+    content: "button";
+    position: absolute;
+    top:0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #363636;
+    color:#ff0; 
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: all 0.5s;
+    transform: scale(0) rotateY(0deg);
+    opacity: 0;
+}
+
+.eleven:hover::after {
+    left: 0;
+    transform: scale(1) rotateY(360deg);
+    opacity: 1;
+}
+
+/* ================== */
+
+.twelve {
+    width: 200px;
+    height:50px;
+    color: rgb(217, 27, 59);
+    background-color: transparent;
+    font-size: 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 50px;
+    transition: all 0.5s;
+    position: relative;
+    margin-bottom: 20px;
+
+}
+
+.twelve:before,
+.twelve:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width:20px;
+    height: 20px;
+    background-color:rgb(217, 27, 59);
+    border-radius: 50%;
+    transform: translateY(-50%);
+    transition: all 0.3s;
+    z-index: -1;
+    opacity:0;
+}
+
+.twelve:before {
+    left:0;
+    box-shadow: -100px 0 0 rgb(217, 27, 59);
+    
+}
+
+.twelve:after {
+    right:0;
+    box-shadow: 100px 0 0 rgb(217, 27, 59);
+    
+}
+
+.twelve:hover:before {
+    left:50%;
+    box-shadow: 30px 0 0 rgb(217, 27, 59);
+    transform: translateX(-50%) translateY(-50%);
+    opacity:1;
+}
+
+.twelve:hover:after {
+    right:50%;
+    box-shadow: -30px 0 0 rgb(217, 27, 59);
+    transform: translateX(50%) translateY(-50%);
+    opacity:1;
+}
+
+.twelve span {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(217, 27, 59);
+    border-radius: 8px;
+    transform: scale(0);
+    transition: all 0.3s;
+    z-index: -1;
+}
+
+.twelve:hover span {
+    transform:scale(1) ;
+    transition-delay: 0.4s;
+}
+
+.twelve:hover {
+    color:white;
+    transition-delay: 0.4s;
+}
+
+/* ================== */
