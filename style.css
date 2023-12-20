@@ -561,3 +561,139 @@ body {
 }
 
 /* ================== */
+
+.thirteen {
+    margin: 30px;
+    width: 300px;
+    height: 60px;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: transparent;
+    text-align: center;
+    line-height: 60px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    position: relative;
+    transition: all 0.2x;
+    color:white;
+}
+
+.thirteen:hover {
+    color: darkgrey;
+}
+
+.thirteen:before {
+    content:"";
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    width: 100%;
+    height: 100%;
+    background-color: lightblue;
+    z-index: -1;
+    mix-blend-mode: multiply ;
+    transition: all 0.2s;
+    transform-origin: top;
+}
+
+.thirteen:after {
+    content:"";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 100%;
+    height: 100%;
+    background-color: pink;
+    z-index: -1;
+    mix-blend-mode: multiply ;
+    transition: all 0.2s;
+    transform-origin: bottom;
+}
+
+.thirteen:hover:before {
+    top:-6px;
+    left:0;
+    transform: perspective(1000px) rotateX(75deg);
+}
+
+.thirteen:hover:after {
+    top:6px;
+    left:0;
+    transform: perspective(1000px) rotateX(-75deg);
+}
+
+/* ================== */
+
+.fourteen {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 25px;
+    font-family: verdana;
+    color: #f6b93b;
+    letter-spacing: 3px;
+    padding: 25px 50px;
+    position: relative;
+    border: 3px solid #f6b93b;
+    transition: all 0.2s;
+    overflow: hidden;
+}
+
+.fourteen:before,
+.fourteen:after,
+span:before,
+span:after {
+  content: "";
+  position: absolute;
+  width: 25%;
+  height: 100%;
+  background-color: #f6b93b;
+  z-index: -1;
+  transition: all 0.1s;
+}
+
+.fourteen:before {
+  top: 100%;
+  left: 0%;
+}
+
+.fourteen:hover:before {
+  top: 0;
+  left: 0;
+}
+
+.fourteen:after {
+  top: -100%;
+  right: 0;
+  transition-delay: 0.3s
+}
+
+.fourteen:hover:after {
+  top: 0;
+  right: 0;
+}
+
+.fourteen span:before {
+  top: -100%;
+  left: 25%;
+  transition-delay: 0.1s;
+}
+
+.fourteen:hover span:before {
+  top: 0;
+  left: 25%;
+}
+
+.fourteen span:after {
+  bottom: -100%;
+  right: 25%;
+  transition-delay: 0.2s
+}
+
+.fourteen:hover span:after {
+  bottom: 0;
+  right: 25%;
+}
+
+.fourteen:hover {
+  color: #222;
+}
