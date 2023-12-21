@@ -640,8 +640,8 @@ body {
 
 .fourteen:before,
 .fourteen:after,
-span:before,
-span:after {
+.span_14:before,
+.span_14:after {
   content: "";
   position: absolute;
   width: 25%;
@@ -672,24 +672,24 @@ span:after {
   right: 0;
 }
 
-.fourteen span:before {
+.fourteen .span_14:before {
   top: -100%;
   left: 25%;
   transition-delay: 0.1s;
 }
 
-.fourteen:hover span:before {
+.fourteen:hover .span_14:before {
   top: 0;
   left: 25%;
 }
 
-.fourteen span:after {
+.fourteen .span_14:after {
   bottom: -100%;
   right: 25%;
   transition-delay: 0.2s
 }
 
-.fourteen:hover span:after {
+.fourteen:hover .span_14:after {
   bottom: 0;
   right: 25%;
 }
